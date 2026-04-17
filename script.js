@@ -12,8 +12,7 @@ let feels = document.getElementById('feels');
 searchBtn.addEventListener('click', function () {
     console.log(city.value)
 
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=7e70bb7ea5b9828e0f77c350f0ed5ffe&units=metric`
-
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
     fetch(url)
         
         .then(function (response) {
