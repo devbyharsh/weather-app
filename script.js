@@ -1,11 +1,13 @@
 let city = document.getElementById('input');
 let searchBtn = document.getElementById('btn');
-let loction = document.getElementById('loction');
+let location = document.getElementById('location');
 let temp = document.getElementById('temp');
 let time = document.getElementById('time');
 let humidity = document.getElementById('humidity');
 let wind = document.getElementById('wind');
 let feels = document.getElementById('feels');
+
+const apiKey = "YOUR_API_KEY";
 
 
 
@@ -23,13 +25,13 @@ searchBtn.addEventListener('click', function () {
             document.querySelector('.stats').style.display = 'flex';
 
 
-            if(data.cod === "404"){
-                loction.textContent = "City not found";
+            if(data.cod === 404){
+                location.textContent = "City not found";
                 return
             }
             console.log(data);
 
-            loction.textContent = data.name;
+            location.textContent = data.name;
             temp.textContent = Math.round(data.main.temp) + "°C";
             humidity.textContent = data.main.humidity;
             wind.textContent = Math.round(data.wind.speed) + " km/h";
