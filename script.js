@@ -27,6 +27,7 @@ searchBtn.addEventListener('click', function () {
 
             if(data.cod === 404){
                 location.textContent = "City not found";
+                document.querySelector('.stats').style.display = 'none';
                 return
             }
             console.log(data);
